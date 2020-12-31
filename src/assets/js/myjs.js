@@ -74,6 +74,11 @@ $(document).ready(function() {
 
 		});
 
+		setTimeout(function(){
+			$('.loader').fadeOut()
+			$('body').css('overflow-y',"auto")
+		  },3000);
+
 });
 
 

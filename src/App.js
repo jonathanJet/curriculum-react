@@ -12,7 +12,7 @@ const currentUser = "OPsd1GfrMfw1krpcQQA9"
 
 var User = {
 	name: "",
-	lastname: "",
+	lastName: "",
 	job: "",
 	slogan: "",
 	menu: [
@@ -27,13 +27,7 @@ function App() {
 
   const loadUser = async ()=>{
 
-    /*db.collection('User').onSnapshot((querySnapShot) => {
-      const docs = []
-      querySnapShot.forEach((doc) => {
-        console.log(doc.data());
-      })
-	})*/
-	
+	console.log(await (await db.collection('User').doc(currentUser).get()).data())
 	setUser (await (await db.collection('User').doc(currentUser).get()).data())
 
  }
@@ -111,7 +105,7 @@ function App() {
   return (
     <div className="App">
       <section id="home" className="pfblock-image screen-height" style={ { height: "764px", backgroundPosition: "50% 0px" }} >
-        <PresentationSection name={user.name} lastname={user.lastname} job={user.job} slogan={user.slogan} ></PresentationSection>
+        <PresentationSection name={user.name} lastName={user.lastName} job={user.job} slogan={user.slogan} ></PresentationSection>
 	</section>
 	
 	<div id="undefined-sticky-wrapper" className="sticky-wrapper" style={{height: "48px"}}>

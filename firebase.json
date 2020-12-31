@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "jtorres-dev-react-cv",
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
